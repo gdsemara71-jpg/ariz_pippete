@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Riz Pippete — Eco Premium Lifestyle</title>
+  <meta name="description" content="Produk ramah lingkungan premium. Pipet beras, bambu, besi, totebag, gelas kertas, dan jaket bambu untuk gaya hidup zero waste modern." />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- PARTICLES -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-brand">A Riz <em>Pippete</em></div>
+  <div class="loader-bar"></div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <button id="lightbox-close" aria-label="Close">&#x2715;</button>
+  <img id="lightbox-img" src="" alt="Gallery" />
+</div>
+
+<!-- MOBILE MENU -->
+<nav id="mobile-menu" aria-label="Mobile navigation">
+  <button class="mobile-menu-close" aria-label="Close menu">&#x2715;</button>
+  <ul class="mobile-nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#sustainability">Sustainability</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- NAVBAR -->
+<header id="navbar">
+  <a href="#home" class="nav-logo">A Riz <em>Pippete</em></a>
+  <ul class="nav-center">
+    <li><a href="#home" class="active">Home</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#sustainability">Sustainability</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-icons">
+    <button class="nav-icon-btn" aria-label="Search">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+    </button>
+    <button class="nav-icon-btn" aria-label="Account">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </button>
+    <button class="nav-icon-btn" aria-label="Wishlist">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    </button>
+    <button class="nav-icon-btn cart-btn" aria-label="Cart" style="position:relative">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <span class="cart-badge">1</span>
+    </button>
+    <button class="hamburger nav-icon-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================================ HERO ================================ -->
+<section id="home">
+  <div id="hero">
+    <div class="hero-video-wrap">
+      <div class="hero-video-fallback"></div>
+      <video autoplay muted loop playsinline poster="">
+        <source src="{{ url_for('static', filename='video/Firefly generate video pendek promosi sedotan ramah lingkungan dengan bg lingkungan hijau asri 49648.mp4') }}" type="video/mp4" />
+      </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">🌿 Eco Premium Lifestyle</div>
+      <h1 class="hero-title">Small Change,<br /><em>Better Earth</em></h1>
+      <p class="hero-sub">Produk ramah lingkungan untuk gaya hidup modern tanpa limbah. Dipilih dengan penuh kesadaran, dirancang untuk masa depan.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-primary">Explore Products</a>
+        <a href="#about" class="btn-outline">Our Mission</a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ ABOUT ================================ -->
+<section id="about" class="section-pad">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-img-main" style="background:linear-gradient(145deg,#2d4a2d,#4a6741);">
+          <svg width="100%" height="100%" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" style="position:absolute;inset:0;">
+            <defs>
+              <radialGradient id="ag1" cx="40%" cy="30%">
+                <stop offset="0%" stop-color="#6b8f5e" stop-opacity="0.5"/>
+                <stop offset="100%" stop-color="#1a2e1a" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <rect width="400" height="500" fill="url(#ag1)"/>
+            <!-- Bamboo stems -->
+            <rect x="60" y="0" width="14" height="500" rx="7" fill="rgba(107,143,94,0.3)"/>
+            <rect x="100" y="30" width="10" height="500" rx="5" fill="rgba(107,143,94,0.2)"/>
+            <rect x="310" y="0" width="12" height="500" rx="6" fill="rgba(107,143,94,0.25)"/>
+            <rect x="340" y="60" width="8" height="500" rx="4" fill="rgba(107,143,94,0.15)"/>
+            <!-- Leaf shapes -->
+            <ellipse cx="80" cy="120" rx="40" ry="12" transform="rotate(-30 80 120)" fill="rgba(107,143,94,0.4)"/>
+            <ellipse cx="80" cy="240" rx="45" ry="13" transform="rotate(25 80 240)" fill="rgba(107,143,94,0.35)"/>
+            <ellipse cx="320" cy="80" rx="38" ry="11" transform="rotate(20 320 80)" fill="rgba(107,143,94,0.4)"/>
+            <ellipse cx="320" cy="200" rx="42" ry="12" transform="rotate(-25 320 200)" fill="rgba(107,143,94,0.3)"/>
+            <!-- Brand text -->
+            <text x="200" y="260" text-anchor="middle" font-family="Georgia,serif" font-size="22" fill="rgba(245,240,232,0.55)" font-style="italic">A Riz Pippete</text>
+            <text x="200" y="290" text-anchor="middle" font-family="sans-serif" font-size="10" fill="rgba(245,240,232,0.3)" letter-spacing="4">ECO PREMIUM</text>
+          </svg>
+        </div>
+        <div class="about-img-accent" style="background:var(--linen);">
+          <svg width="100%" height="100%" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="200" height="200" fill="#c4956a" opacity="0.15"/>
+            <circle cx="100" cy="80" r="45" fill="rgba(196,149,106,0.25)"/>
+            <text x="100" y="86" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#5c4033" font-style="italic">Natural</text>
+            <text x="100" y="106" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#5c4033" font-style="italic">Materials</text>
+          </svg>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">5+</span>
+          <span class="about-badge-label">Tahun Berdiri</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="reveal">
+          <span class="section-label">Tentang Kami</span>
+          <h2 class="section-title">Hadir untuk <em>Bumi</em> yang Lebih Baik</h2>
+        </div>
+        <p class="section-desc reveal reveal-delay-1">
+          A Riz Pippete hadir untuk membantu mengurangi limbah plastik dengan menghadirkan produk reusable dan biodegradable yang tetap stylish. Kami percaya bahwa perubahan kecil dalam keseharian dapat menciptakan dampak besar bagi lingkungan.
+        </p>
+        <p class="section-desc reveal reveal-delay-2" style="margin-top:1rem;">
+          Setiap produk kami dirancang dengan mempertimbangkan siklus hidup penuh — dari bahan baku alami hingga akhir penggunaan yang bertanggung jawab.
+        </p>
+        <div class="stats-row reveal reveal-delay-3">
+          <div class="stat-item">
+            <div class="stat-num"><span class="stat-counter" data-target="10000" data-suffix="+">0</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-label">Produk Terjual</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span class="stat-counter" data-target="85" data-suffix="%">0</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-label">Pengurangan Plastik</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num"><span class="stat-counter" data-target="500" data-suffix="+">0</span></div>
+            <div class="stat-divider"></div>
+            <div class="stat-label">Pelanggan Aktif</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ PRODUCTS ================================ -->
+<section id="products" class="section-pad">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-label">Koleksi Kami</span>
+      <h2 class="section-title">Produk <em>Pilihan</em> Ramah Lingkungan</h2>
+      <p class="section-desc">Setiap item dipilih dan dirancang agar fungsional, indah, dan berdampak positif bagi bumi.</p>
+    </div>
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <div class="product-card reveal">
+  <div class="product-card-img">
+    <img src="{{ url_for('static', filename='images/sedotan_beras.jpg') }}" alt="Pipet Beras" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    <div class="product-tag-eco">🌿 Natural</div>
+  </div>
+  <div class="product-card-body">
+    <div class="product-name">Pipet Beras</div>
+    <p class="product-desc">Terbuat dari batang padi alami. Biodegradable 100%, cocok untuk minuman dingin dan panas. Unik dan berkarakter.</p>
+    <div class="product-footer">
+      <span class="product-price">Rp 15.000/pack</span>
+      <button class="btn-detail">
+        Detail
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- Product 2 -->
+      <div class="product-card reveal">
+  <div class="product-card-img">
+    <img src="{{ url_for('static', filename='images/sedotan_bambu.jpg') }}" alt="Pipet Bambu" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    <div class="product-tag-eco">🌿 Bamboo</div>
+  </div>
+  <div class="product-card-body">
+    <div class="product-name">Pipet Bambu</div>
+    <p class="product-desc">Dipotong dari bambu pilihan, halus di tangan dan mulut. Dapat digunakan berkali-kali, mudah dibersihkan.</p>
+    <div class="product-footer">
+      <span class="product-price">Rp 25.000/pack</span>
+      <button class="btn-detail">
+        Detail
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- Product 3 -->
+      <div class="product-card reveal">
+  <div class="product-card-img">
+    <img src="{{ url_for('static', filename='images/sedotan_besi.jpg') }}" alt="Pipet Besi" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    <div class="product-tag-eco">♻️ Reusable</div>
+  </div>
+  <div class="product-card-body">
+    <div class="product-name">Pipet Besi</div>
+    <p class="product-desc">Stainless steel food-grade, tahan karat, awet seumur hidup. Gaya premium dengan tanggungjawab lingkungan.</p>
+    <div class="product-footer">
+      <span class="product-price">Rp 35.000/pcs</span>
+      <button class="btn-detail">
+        Detail
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- Product 4 -->
+      <div class="product-card reveal">
+  <div class="product-card-img">
+    <img src="{{ url_for('static', filename='images/bag.png') }}" alt="Totebag Kertas" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    <div class="product-tag-eco">📦 Paper</div>
+  </div>
+  <div class="product-card-body">
+    <div class="product-name">Totebag Kertas</div>
+    <p class="product-desc">Kraft paper premium dengan desain elegan. Kuat, ringan, dan dapat didaur ulang. Alternatif ramah lingkungan terbaik.</p>
+    <div class="product-footer">
+      <span class="product-price">Rp 12.000/pcs</span>
+      <button class="btn-detail">
+        Detail
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- Product 5 -->
+      <div class="product-card reveal reveal-delay-1">
+  <div class="product-card-img">
+    <img src="{{ url_for('static', filename='images/cup.jpg') }}" alt="Gelas Kertas" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    <div class="product-tag-eco">☕ Eco Cup</div>
+  </div>
+  <div class="product-card-body">
+    <div class="product-name">Gelas Kertas</div>
+    <p class="product-desc">Lapisan food-grade biodegradable. Cocok untuk kopi, teh, dan minuman lainnya. Tersedia berbagai ukuran.</p>
+    <div class="product-footer">
+      <span class="product-price">Rp 20.000/pack</span>
+      <button class="btn-detail">
+        Detail
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7" /></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+      <!-- Product 6 -->
+      <div class="product-card reveal reveal-delay-2">
+        <div class="product-card-img">
+          <svg width="100%" height="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="display:block;background:linear-gradient(135deg,#e8f0e8,#d8e8d8);">
+            <path d="M200 50 L260 100 L270 240 L130 240 L140 100 Z" fill="#2d4a2d" opacity="0.85"/>
+            <path d="M200 50 L240 100 L130 100" fill="none" stroke="#4a6741" stroke-width="3"/>
+            <path d="M200 50 L160 100 L270 100" fill="none" stroke="#4a6741" stroke-width="3"/>
+            <rect x="155" y="100" width="90" height="140" rx="4" fill="#2d4a2d" opacity="0.9"/>
+            <line x1="200" y1="100" x2="200" y2="240" stroke="#4a6741" stroke-width="1.5" opacity="0.4"/>
+            <text x="200" y="180" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(245,240,232,0.5)" letter-spacing="2">BAMBOO</text>
+            <text x="200" y="195" text-anchor="middle" font-family="sans-serif" font-size="8" fill="rgba(245,240,232,0.5)" letter-spacing="2">JACKET</text>
+            <text x="200" y="278" text-anchor="middle" font-family="Georgia,serif" font-size="13" fill="#2d4a2d" font-style="italic">Jaket Bambu</text>
+          </svg>
+          <div class="product-tag-eco">🎋 Bamboo Fiber</div>
+        </div>
+        <div class="product-card-body">
+          <div class="product-name">Jaket Bambu</div>
+          <p class="product-desc">Dibuat dari serat bambu organik. Anti-bakteri alami, sejuk di kulit, ringan, dan stylish untuk eco-conscious lifestyle.</p>
+          <div class="product-footer">
+            <span class="product-price">Rp 385.000/pcs</span>
+            <button class="btn-detail">
+              Detail
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================ SUSTAINABILITY ================================ -->
+<section id="sustainability" class="section-pad">
+  <div class="container">
+    <div class="sustain-grid">
+      <div class="sustain-text">
+        <span class="section-label reveal">Edukasi Lingkungan</span>
+        <h2 class="section-title reveal reveal-delay-1">Kenapa <em>Pilihan</em><br/>Kita Penting?</h2>
+        <p class="section-desc reveal reveal-delay-2">
+          Setiap tahun, lebih dari 8 juta ton plastik berakhir di lautan kita. Dengan beralih ke produk reusable dan biodegradable, kita semua bisa menjadi bagian dari solusi.
+        </p>
+        <div style="margin-top:2rem;" class="reveal reveal-delay-3">
+          <a href="#contact" class="btn-primary">Bergabung dengan Kami</a>
+        </div>
+      </div>
+      <div class="sustain-cards">
+        <div class="sustain-card reveal">
+          <div class="sustain-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+          </div>
+          <div>
+            <div class="sustain-card-title">Bahaya Plastik Sekali Pakai</div>
+            <div class="sustain-card-desc">Plastik sekali pakai membutuhkan 400–1000 tahun untuk terurai. Ia mencemari tanah, air, dan rantai makanan kita secara diam-diam.</div>
+          </div>
+        </div>
+        <div class="sustain-card reveal reveal-delay-1">
+          <div class="sustain-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+          </div>
+          <div>
+            <div class="sustain-card-title">Pentingnya Produk Reusable</div>
+            <div class="sustain-card-desc">Satu produk reusable dapat menggantikan ratusan produk sekali pakai. Investasi kecil untuk dampak lingkungan yang sangat besar.</div>
+          </div>
+        </div>
+        <div class="sustain-card reveal reveal-delay-2">
+          <div class="sustain-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+          </div>
+          <div>
+            <div class="sustain-card-title">Manfaat Bambu & Bahan Alami</div>
+            <div class="sustain-card-desc">Bambu tumbuh hingga 91 cm per hari tanpa pupuk atau pestisida. Ia menyerap CO₂ 35% lebih banyak dari pohon biasa — superfood bagi bumi.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ GALLERY ================================ -->
+<section id="gallery" class="section-pad">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="section-label">Galeri</span>
+      <h2 class="section-title">Gaya Hidup <em>Eco</em> Premium</h2>
+      <p class="section-desc">Inspirasi visual untuk perjalanan sustainable living Anda.</p>
+    </div>
+    <div class="masonry-grid">
+
+      <!-- Gallery Item 1 -->
+      <div class="masonry-item reveal">
+        <svg width="100%" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#1a2e1a"/><stop offset="100%" stop-color="#4a6741"/></linearGradient></defs>
+          <rect width="400" height="520" fill="url(#g1)"/>
+          <circle cx="200" cy="200" r="120" fill="rgba(107,143,94,0.2)"/>
+          <text x="200" y="195" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="rgba(245,240,232,0.6)" font-style="italic">Bamboo</text>
+          <text x="200" y="220" text-anchor="middle" font-family="Georgia,serif" font-size="20" fill="rgba(245,240,232,0.6)" font-style="italic">Forest</text>
+        </svg>
+        <div class="masonry-overlay"><div class="masonry-label">Hutan Bambu</div></div>
+        <div class="masonry-zoom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- Gallery Item 2 -->
+      <div class="masonry-item reveal reveal-delay-1">
+        <svg width="100%" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs><linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#c4956a"/><stop offset="100%" stop-color="#8b6914"/></linearGradient></defs>
+          <rect width="400" height="320" fill="url(#g2)"/>
+          <text x="200" y="155" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.7)" font-style="italic">Rice Straws</text>
+          <text x="200" y="180" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.7)" font-style="italic">Collection</text>
+        </svg>
+        <div class="masonry-overlay"><div class="masonry-label">Koleksi Pipet Beras</div></div>
+        <div class="masonry-zoom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- Gallery Item 3 -->
+      <div class="masonry-item reveal reveal-delay-2">
+        <svg width="100%" viewBox="0 0 400 440" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs><linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2d4a2d"/><stop offset="100%" stop-color="#6b8f5e"/></linearGradient></defs>
+          <rect width="400" height="440" fill="url(#g3)"/>
+          <circle cx="200" cy="180" r="90" fill="rgba(245,240,232,0.08)"/>
+          <text x="200" y="175" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.65)" font-style="italic">Eco</text>
+          <text x="200" y="198" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.65)" font-style="italic">Lifestyle</text>
+        </svg>
+        <div class="masonry-overlay"><div class="masonry-label">Eco Lifestyle</div></div>
+        <div class="masonry-zoom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- Gallery Item 4 -->
+      <div class="masonry-item reveal">
+        <svg width="100%" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs><linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#5c4033"/><stop offset="100%" stop-color="#c4956a"/></linearGradient></defs>
+          <rect width="400" height="350" fill="url(#g4)"/>
+          <text x="200" y="170" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.7)" font-style="italic">Totebag</text>
+          <text x="200" y="195" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.7)" font-style="italic">Premium</text>
+        </svg>
+        <div class="masonry-overlay"><div class="masonry-label">Totebag Kraft Premium</div></div>
+        <div class="masonry-zoom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- Gallery Item 5 -->
+      <div class="masonry-item reveal reveal-delay-1">
+        <svg width="100%" viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs><linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4a6741"/><stop offset="100%" stop-color="#1a2e1a"/></linearGradient></defs>
+          <rect width="400" height="480" fill="url(#g5)"/>
+          <text x="200" y="235" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.65)" font-style="italic">Bamboo</text>
+          <text x="200" y="260" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.65)" font-style="italic">Jacket</text>
+        </svg>
+        <div class="masonry-overlay"><div class="masonry-label">Jaket Serat Bambu</div></div>
+        <div class="masonry-zoom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+      <!-- Gallery Item 6 -->
+      <div class="masonry-item reveal reveal-delay-2">
+        <svg width="100%" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="display:block;">
+          <defs><linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#8b6914"/><stop offset="100%" stop-color="#c4956a"/></linearGradient></defs>
+          <rect width="400" height="300" fill="url(#g6)"/>
+          <text x="200" y="145" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.7)" font-style="italic">Zero</text>
+          <text x="200" y="170" text-anchor="middle" font-family="Georgia,serif" font-size="18" fill="rgba(245,240,232,0.7)" font-style="italic">Waste Living</text>
+        </svg>
+        <div class="masonry-overlay"><div class="masonry-label">Zero Waste Living</div></div>
+        <div class="masonry-zoom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="white"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================ CONTACT ================================ -->
+<section id="contact" class="section-pad">
+  <div class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="reveal">
+          <span class="section-label">Hubungi Kami</span>
+          <h2 class="section-title">Mari <em>Terhubung</em></h2>
+          <p class="section-desc">Punya pertanyaan, kerja sama, atau sekadar ingin tahu lebih lanjut? Kami selalu siap mendengar.</p>
+        </div>
+        <div style="margin-top:2.5rem;">
+          <div class="contact-info-item reveal reveal-delay-1">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Alamat</div>
+              <div class="contact-info-val">Jl. Pulomas<br/>Badung, Darmasaba Banjar Clean 40123</div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal reveal-delay-2">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">Email</div>
+              <div class="contact-info-val">hello@arizpippete.com</div>
+            </div>
+          </div>
+          <div class="contact-info-item reveal reveal-delay-3">
+            <div class="contact-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <div class="contact-info-label">WhatsApp</div>
+              <div class="contact-info-val">+62 812-3456-7890</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-1">
+        <form id="contact-form">
+          <div class="form-group">
+            <label class="form-label" for="name">Nama Lengkap</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Nama Anda" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Alamat Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="email@contoh.com" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Pesan</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Kirim Pesan</button>
+        </form>
+        <div id="form-success">
+          <p>✅ Terima kasih! Pesan Anda telah kami terima.<br/>Kami akan segera menghubungi Anda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================ FOOTER ================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">A Riz <em>Pippete</em></div>
+        <p class="footer-desc">Produk ramah lingkungan premium untuk gaya hidup modern yang bertanggung jawab. Bersama kita jaga bumi untuk generasi mendatang.</p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="TikTok">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Twitter/X">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="WhatsApp">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Navigasi</div>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#sustainability">Sustainability</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Produk</div>
+        <ul class="footer-links">
+          <li><a href="#products">Pipet Beras</a></li>
+          <li><a href="#products">Pipet Bambu</a></li>
+          <li><a href="#products">Pipet Besi</a></li>
+          <li><a href="#products">Totebag Kertas</a></li>
+          <li><a href="#products">Gelas Kertas</a></li>
+          <li><a href="#products">Jaket Bambu</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 A Riz Pippete. All rights reserved.</span>
+      <span style="color:rgba(245,240,232,0.3);">Made with 🌿 for a better earth</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a id="wa-float" href="https://wa.me/6281234567890" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Back to Top -->
+<button id="back-top" aria-label="Kembali ke atas">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 15l7-7 7 7"/></svg>
+</button>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
